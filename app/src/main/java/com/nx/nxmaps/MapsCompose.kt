@@ -87,30 +87,29 @@ fun MapsCompose2() {
     }
 }
 
+// open maps ui [ zoom ] normal on/off
 @Composable
 fun MapsCompose3() {
 
     var uiSettings by remember { mutableStateOf(MapUiSettings()) }
 
-    val properties by remember { mutableStateOf(MapProperties(mapType = MapType.NORMAL)) }
+    val properties by remember { mutableStateOf(MapProperties(mapType = MapType.SATELLITE)) }
 
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
+
+        uiSettings = uiSettings.copy(zoomControlsEnabled = true)
+
         GoogleMap(
             modifier = Modifier.matchParentSize(),
             properties = properties,
             uiSettings = uiSettings
         )
-        Switch(
-            checked = uiSettings.zoomControlsEnabled,
-            onCheckedChange = {
-                uiSettings = uiSettings.copy(zoomControlsEnabled = it)
-            }
-        )
     }
 }
 
+// on/off maps ui by [ Switch ]
 @Composable
 fun MapsCompose4() {
 
@@ -121,17 +120,38 @@ fun MapsCompose4() {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-
-        uiSettings = uiSettings.copy(zoomControlsEnabled = false)
-
         GoogleMap(
             modifier = Modifier.matchParentSize(),
             properties = properties,
             uiSettings = uiSettings
         )
+        Column(
+            modifier = Modifier.padding(start = 4.dp)
+        ) {
+            Switch(
+                checked = uiSettings.scrollGesturesEnabled,
+                onCheckedChange = {
+                    uiSettings = uiSettings.copy(zoomControlsEnabled = it)
+                }
+            )
+            Switch(
+                checked = uiSettings.rotationGesturesEnabled,
+                onCheckedChange = {
+                    uiSettings = uiSettings.copy(rotationGesturesEnabled = it)
+                }
+            )
+            Switch(
+                checked = uiSettings.zoomGesturesEnabled,
+                onCheckedChange = {
+                    uiSettings = uiSettings.copy(zoomGesturesEnabled = it)
+                }
+            )
+        }
     }
 }
 
+
+// marker info windoww
 @Composable
 fun MapsCompose5() {
 
@@ -156,14 +176,18 @@ fun MapsCompose5() {
             ) { marker ->
                 Card(
                     shape = RoundedCornerShape(4.dp),
-                    modifier = Modifier.width(320.dp).height(220.dp),
+                    modifier = Modifier
+                        .width(320.dp)
+                        .height(220.dp),
                     colors = CardDefaults.cardColors(containerColor = Color.White)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.map2),
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
-                        modifier = Modifier.height(100.dp).fillMaxWidth()
+                        modifier = Modifier
+                            .height(100.dp)
+                            .fillMaxWidth()
                     )
                     Column(
                         modifier = Modifier.padding(top = 8.dp, start = 10.dp, end = 10.dp),
@@ -177,7 +201,7 @@ fun MapsCompose5() {
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
-                            text = "明治になり東京市15区の名前の一つに「浅草」が採用された。また、浅草寺を中心とした地区を近代的に公園化。浅草は古代の隅田川（古入間川）の河口近くに位置した。海の幸にも恵まれていた。",
+                            text = "detail",
                             color = Color.DarkGray,
                             fontSize = 14.sp,
                             maxLines = 5,
