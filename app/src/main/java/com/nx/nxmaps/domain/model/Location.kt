@@ -1,4 +1,4 @@
-package com.nx.nxmaps.firestore_latitude.domain.model
+package com.nx.nxmaps.domain.model
 
 data class Location(
     var id: String? = null,

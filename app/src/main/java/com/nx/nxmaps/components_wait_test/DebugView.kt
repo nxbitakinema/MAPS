@@ -1,4 +1,4 @@
-package com.nx.nxmaps
+package com.nx.nxmaps.components_wait_test
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

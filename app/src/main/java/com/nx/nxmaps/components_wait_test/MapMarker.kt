@@ -1,4 +1,4 @@
-package com.nx.nxmaps
+package com.nx.nxmaps.components_wait_test
 
 import android.content.Context
 import androidx.annotation.DrawableRes
@@ -14,7 +14,7 @@ fun MapMarker(
     title: String,
     @DrawableRes iconResourceId: Int
 ) {
-    val icon = PinIcon(
+    val icon = pinIcon(
         context, iconResourceId
     )
     Marker(

@@ -1,4 +1,4 @@
-package com.nx.nxmaps
+package com.nx.nxmaps.components_wait_test
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -41,6 +41,7 @@ import com.google.maps.android.compose.MarkerInfoWindow
 import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.google.maps.android.compose.rememberMarkerState
+import com.nx.nxmaps.R
 
 // config latitude + zoom + show label
 @Composable
@@ -168,7 +169,7 @@ fun MapsCompose5() {
             cameraPositionState = cameraPositionState
         ) {
 
-            val icon = PinIcon(LocalContext.current, R.drawable.pin)
+            val icon = pinIcon(LocalContext.current, R.drawable.pin)
 
             MarkerInfoWindow(
                 state = MarkerState(position = asakusa),

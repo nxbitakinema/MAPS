@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id "kotlin-kapt"
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -70,8 +72,15 @@ dependencies {
     implementation "com.google.maps.android:android-maps-utils:3.4.0"
 
     // firestore
+    implementation platform("com.google.firebase:firebase-bom:$firebase_bom_version")
     implementation 'com.google.firebase:firebase-firestore-ktx:24.7.0'
 
+    // hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // hilt navigation compose
+    implementation "androidx.hilt:hilt-navigation-compose:$hilt_navigation_compose_version"
 
 
 }

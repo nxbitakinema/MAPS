@@ -1,4 +1,4 @@
-package com.nx.nxmaps
+package com.nx.nxmaps.components_wait_test
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button

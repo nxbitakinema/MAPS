@@ -1,4 +1,4 @@
-package com.nx.nxmaps
+package com.nx.nxmaps.components_wait_test
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -9,7 +9,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 
 // pin icon build from image bitmap
 @Composable
-fun PinIcon(
+fun pinIcon(
     context: Context,
     vectorResId: Int
 ): BitmapDescriptor? {
