@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "796926193473",
+    "project_id": "nxmaps-location",
+    "storage_bucket": "nxmaps-location.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796926193473:android:591a43e32b1d8002653bc0",
+        "android_client_info": {
+          "package_name": "com.nx.nxmaps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796926193473-2f1k13m4g2a7oj9tl17hb8lhdjmkaj9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIpyWh7JNuMEhIWh6CBaTI7Z7Vjz7gl5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796926193473-2f1k13m4g2a7oj9tl17hb8lhdjmkaj9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
